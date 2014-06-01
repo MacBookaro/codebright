@@ -22,3 +22,5 @@ Route::get('/', array('before' => 'cumpleanos:31/05', function() { return View::
 
 Route::get('index', 'ArticuloController@mostrarIndex');
 Route::post('articulo/nuevo', 'ArticuloController@nuevoArticulo');
+
+Route::controller('Articulo', 'Blog\Controller\Articulo');
