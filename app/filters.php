@@ -5,7 +5,7 @@ Route::filter('cumpleanosA', function($ruta, $peticion, $fecha) {
     }
 });
 
-Route::filter('cumpleanos', function($routa, $peticion, $primera, $segunda, $tercera) {
+Route::filter('cumpleanosB', function($routa, $peticion, $primera, $segunda, $tercera) {
         return "{$primera} - {$segunda} - {$tercera}";
 });
 
@@ -13,3 +13,5 @@ Route::filter('ejemplo', function($ruta, $peticion, $opcional = '¡Sip!')
 {
     return "{$opcional}";
 });
+
+Route::filter('cumpleanos', 'filtroCumpleanos');
