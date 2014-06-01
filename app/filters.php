@@ -48,6 +48,7 @@ App::after(function($request, $response)
 | session is logged into this application. The "basic" filter easily
 | integrates HTTP Basic authentication for quick, simple checking.
 |
+| Filtros por defecto
 */
 
 Route::filter('auth', function()
