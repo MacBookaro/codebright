@@ -16,6 +16,7 @@ Route::filter('ejemplo', function($ruta, $peticion, $opcional = '¡Sip!')
 
 Route::filter('cumpleanos', 'filtroCumpleanos');
 
+Route::when('perfil/*', 'cumpleanos');
 
 /*
 |--------------------------------------------------------------------------
