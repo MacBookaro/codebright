@@ -28,3 +28,29 @@ Route::post('articulo/nuevo', 'ArticuloController@nuevoArticulo');
 Route::get('example', function() { return View::make('ejemplo'); });
 
 Route::get('/', function() { return View::make('inicio'); });
+
+Route::get('/url/actual', function() { return URL::current();});
+
+Route::get('/url/full', function() { return URL::full();});
+
+Route::get('primera', function() { return Redirect::to('segunda'); });
+
+Route::get('segunda', function() { return URL::previous(); });
+
+Route::get('el/{primero}/vengador/{segundo}', array('as' => 'ironman', function($primero, $segundo) { return "Tony Stark, el {$primero} vengador {$segundo}"; }));
+
+Route::get('ejemplo', function() { return URL::route('ironman', ['mejor', 'conocido']); });
+
+class Stark extends BaseController {
+    public function tony($queEsTony) {
+        return 'Puedes contar conmigo, para hacerme felíz.';
+    }
+}
+
+Route::get('yo/soy/iron/man', 'Stark@tony');
+
+Route::get('ejemplo', function() { return URL::action('Stark@tony'); });
+
+Route::get('tony/el/genio/{primero}', 'Stark@tony');
+
+Route::get('ejemplo', function() { return URL::action('Stark@tony', array('narcisista')); });
