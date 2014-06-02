@@ -31,4 +31,7 @@
                                               'baloo' => 'Baloo'
                                           )
                                    ), 'negros') }}
+    <br>
+    {{ Form::label('email', 'Dirección e-mail') }}
+    {{ Form::email('email', 'me@daylerees.com') }}
 {{ Form::close() }}
