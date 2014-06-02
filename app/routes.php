@@ -54,3 +54,5 @@ Route::get('ejemplo', function() { return URL::action('Stark@tony'); });
 Route::get('tony/el/genio/{primero}', 'Stark@tony');
 
 Route::get('ejemplo', function() { return URL::action('Stark@tony', array('narcisista')); });
+
+Route::get('ejemplo', function() { return URL::secureAsset('img/logo.png'); });
