@@ -1,6 +1,6 @@
 <!-- app/views/form.blade.php -->
 
-{{ Form::open(array('url' => 'ruta/destino')) }}
+{{ Form::open(array('url' => 'ruta/destino', 'files' => true)) }}
     <br>
     {{ Form::label('txtNombre', 'Nombre', ['id' => 'lblNombre', 'name' => 'lblNombre']) }}
     {{ Form::text('nombre', 'Taylor Otwell', ['id' => 'txtNombre', 'name' => 'txtNombre']) }}
@@ -34,4 +34,7 @@
     <br>
     {{ Form::label('email', 'Dirección e-mail') }}
     {{ Form::email('email', 'me@daylerees.com') }}
+    <br>
+    {{ Form::label('avatar', 'Avatar') }}
+    {{ Form::file('avatar') }}
 {{ Form::close() }}
