@@ -1,14 +1,14 @@
-<h1>Querido señor Otwell</h1>
-<p>Por el presente le reto a un duelo por el honor de PHP</p>
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Narvales</title>
+    </head>
+    <body>
+        @include('cabecera')
 
-<?php //echo $ardilla; ?>
-<p>{{ date('d/m/y') }}</p>
-<p>{{{ '<script>alert("¡BACON APESTOSO!");</script>' }}}</p>
+        <p>El Narval seguramente haga el Bacon a media noche, ¡mi buen señor!</p>
 
-@if ('Panda Rojo' == 'Panda Rojo')
-<p>¡Algo es rojo, blanco y marrón!</p>
-@elseif ('Panda Gigante' == 'Panda Gigante')
-<p>¡Ago es blanco y negro!</p>
-@else
-<p>Algo podría ser una ardilla.</p>
-@endif
+        @include('pie')
+    </body>
+</html>
