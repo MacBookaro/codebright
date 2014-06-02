@@ -78,9 +78,22 @@ Route::get('info', function() { return View::make('hello'); });
 //Route::post('gestionar-formulario', function() { return Input::file('libro')->getMimeType(); });
 //Route::post('gestionar-formulario', function() { return Input::file('libro')->guessExtension(); });
 //Route::post('gestionar-formulario', function() { return Input::file('libro')->getRealPath(); });
-Route::post('gestionar-formulario', function() {
+/*Route::post('gestionar-formulario', function() {
     $fileName = Input::file('libro')->getClientOriginalName('/files');
     Input::file('libro')->move('../app/files', $fileName);
     return 'El archivo fué movido';
+});*/
+Route::get('/', function() {
+    $cookie = Cookie::make('bajas-en-hidratos', 'galleta de almendras', 30);
+    return Response::make('Nom nom')->withCookie($cookie);
 });
 
+Route::get('/nom-nom', function() {
+    $var = Cookie::has('bajas-en-hidratos');
+    var_dump($var);
+});
+Route::get('/', function()
+{
+Cookie::forget('bajas-en-hidratos');
+return 'Me da que vamos tener pollo.';
+});
