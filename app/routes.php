@@ -57,6 +57,12 @@ Route::get('ejemplo', function() { return URL::action('Stark@tony', array('narci
 
 Route::get('ejemplo', function() { return asset('img/logo.png'); });
 
-Route::get('/', function() { $data = Input::except('foo', 'baz'); var_dump($data); });
+//Route::get('/', function() { $data = Input::except('foo', 'baz'); var_dump($data); });
 
 Route::get('post-form', function() { return View::make('form'); });
+
+Route::get('/', function() { Input::flash(); return Redirect::to('nueva/peticion'); });
+
+Route::get('nueva/peticion', function() { var_dump(Input::old()); });
+
+Route::get('/', function() { return Redirect::to('nueva/peticion')->whithInput(Input::only('foo')); });
