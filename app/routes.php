@@ -27,7 +27,7 @@ Route::post('articulo/nuevo', 'ArticuloController@nuevoArticulo');
 */
 Route::get('example', function() { return View::make('ejemplo'); });
 
-Route::get('/', function() { return View::make('ejemplo'); });
+//Route::get('/', function() { return View::make('ejemplo'); });
 
 Route::get('/url/actual', function() { return URL::current();});
 
@@ -56,3 +56,7 @@ Route::get('tony/el/genio/{primero}', 'Stark@tony');
 Route::get('ejemplo', function() { return URL::action('Stark@tony', array('narcisista')); });
 
 Route::get('ejemplo', function() { return asset('img/logo.png'); });
+
+Route::get('/', function() { $data = Input::except('foo', 'baz'); var_dump($data); });
+
+Route::get('post-form', function() { return View::make('form'); });
