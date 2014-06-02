@@ -1,7 +1,5 @@
 <!-- app/views/form.blade.php -->
 
-<form action="{{ url('gestionar-formulario') }}" method="POST" enctype="multipart/form-data">
+{{ Form::open(array('route' => 'mi_ruta')) }}
 
-    <input type="file" name="libro" />
-    <input type="submit">
-</form>
+{{ Form::close() }}

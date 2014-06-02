@@ -83,7 +83,7 @@ Route::get('info', function() { return View::make('hello'); });
     Input::file('libro')->move('../app/files', $fileName);
     return 'El archivo fué movido';
 });*/
-Route::get('/', function() {
+/*Route::get('/', function() {
     $cookie = Cookie::make('bajas-en-hidratos', 'galleta de almendras', 30);
     return Response::make('Nom nom')->withCookie($cookie);
 });
@@ -96,4 +96,5 @@ Route::get('/', function()
 {
 Cookie::forget('bajas-en-hidratos');
 return 'Me da que vamos tener pollo.';
-});
+});*/
+Route::get('/', function() { return View::make('form'); });
