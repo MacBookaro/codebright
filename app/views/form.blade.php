@@ -37,4 +37,6 @@
     <br>
     {{ Form::label('avatar', 'Avatar') }}
     {{ Form::file('avatar') }}
+    <br>
+    {{ Form::hidden('panda', 'luishi') }}
 {{ Form::close() }}
