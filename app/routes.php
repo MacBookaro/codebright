@@ -9,7 +9,7 @@
  |--------------------------------------------------------------------------
  */
 
-Route::get('0/', function() { return View::make('hello'); });
+Route::get('0', function() { return View::make('hello'); });
 Route::get('date', function() { return date('d/m'); });
 
 Route::get('A/', array('before' => 'cumpleanos:31/05', function() { return View::make('hola'); }));
@@ -27,7 +27,7 @@ Route::post('articulo/nuevo', 'ArticuloController@nuevoArticulo');
 */
 Route::get('example', function() { return View::make('ejemplo'); });
 
-Route::get('/', function() { return View::make('inicio'); });
+Route::get('/', function() { return View::make('ejemplo'); });
 
 Route::get('/url/actual', function() { return URL::current();});
 
@@ -55,4 +55,4 @@ Route::get('tony/el/genio/{primero}', 'Stark@tony');
 
 Route::get('ejemplo', function() { return URL::action('Stark@tony', array('narcisista')); });
 
-Route::get('ejemplo', function() { return URL::secureAsset('img/logo.png'); });
+Route::get('ejemplo', function() { return asset('img/logo.png'); });

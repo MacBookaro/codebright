@@ -7,7 +7,7 @@
     <body>
         @include('cabecera')
 
-        <p>El Narval seguramente haga el Bacon a media noche, ¡mi buen señor!</p>
+        <a href="{{ action('Stark@tony', array('foo'), true) }}">Mi enlace</a>
 
         @include('pie')
     </body>
