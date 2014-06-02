@@ -18,4 +18,17 @@
     {{ Form::radio('color_panda', 'rojos', true) }} Rojos
     {{ Form::radio('color_panda', 'negros') }} Negros
     {{ Form::radio('color_panda', 'blancos') }} Blancos
+    <br>
+    {{ Form::label('color_panda', 'Los pandas son') }}
+    {{ Form::select('color_panda', array(
+                                         'Panda' => array(
+                                             'rojos' => 'Rojos',
+                                             'negros' => 'Negros',
+                                             'blancos' => 'Blancos'
+                                          ),
+                                          'Personaje' => array(
+                                             'pooh' => 'Pooh',
+                                              'baloo' => 'Baloo'
+                                          )
+                                   ), 'negros') }}
 {{ Form::close() }}
