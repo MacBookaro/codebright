@@ -10,5 +10,12 @@
     <br>
     {{ Form::label('secreto', 'Súper Secreto') }}
     {{ Form::password('secreto') }}
-
+    <br>
+    {{ Form::label('pandas_son_bonitos', '¿Son bonitos los pandas?') }}
+    {{ Form::checkbox('pandas_son_bonitos', '1', true) }}
+    <br>
+    {{ Form::label('color_panda', 'Los pandas son') }}
+    {{ Form::radio('color_panda', 'rojos', true) }} Rojos
+    {{ Form::radio('color_panda', 'negros') }} Negros
+    {{ Form::radio('color_panda', 'blancos') }} Blancos
 {{ Form::close() }}
