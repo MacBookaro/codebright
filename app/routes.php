@@ -61,8 +61,26 @@ Route::get('ejemplo', function() { return asset('img/logo.png'); });
 
 Route::get('post-form', function() { return View::make('form'); });
 
-Route::get('/', function() { Input::flash(); return Redirect::to('nueva/peticion'); });
+//Route::get('/', function() { Input::flash(); return Redirect::to('nueva/peticion'); });
 
 Route::get('nueva/peticion', function() { var_dump(Input::old()); });
 
-Route::get('/', function() { return Redirect::to('nueva/peticion')->whithInput(Input::only('foo')); });
+//Route::get('/', function() { return Redirect::to('nueva/peticion')->whithInput(Input::only('foo')); });
+
+Route::get('/', function() { return View::make('form'); });
+
+Route::get('info', function() { return View::make('hello'); });
+
+//Route::post('gestionar-formulario', function() { var_dump(Input::file('libro')); });
+
+//Route::post('gestionar-formulario', function() { return Input::file('libro')->getFileName(); });
+//Route::post('gestionar-formulario', function() { return Input::file('libro')->getClientSize(); });
+//Route::post('gestionar-formulario', function() { return Input::file('libro')->getMimeType(); });
+//Route::post('gestionar-formulario', function() { return Input::file('libro')->guessExtension(); });
+//Route::post('gestionar-formulario', function() { return Input::file('libro')->getRealPath(); });
+Route::post('gestionar-formulario', function() {
+    $fileName = Input::file('libro')->getClientOriginalName('/files');
+    Input::file('libro')->move('../app/files', $fileName);
+    return 'El archivo fué movido';
+});
+

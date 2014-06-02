@@ -1,10 +1,7 @@
 <!-- app/views/form.blade.php -->
 
-<form action="{{ url('/') }}?foo=get&baz=get" method="POST">
+<form action="{{ url('gestionar-formulario') }}" method="POST" enctype="multipart/form-data">
 
-    <input type="hidden" name="foo" value="bar" />
-    <input type="hidden" name="baz" value="boo" />
-
-    <input type="submit" value="Enviar" />
-
+    <input type="file" name="libro" />
+    <input type="submit">
 </form>
